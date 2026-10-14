@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # CivicAI: Municipal Intelligence & Accessibility Assistant
 
 **Hackathon Project**
@@ -59,3 +60,7 @@ npm run dev
 pytest backend/tests/
 npm run typecheck && npm run build --prefix frontend
 ```
+=======
+# james
+ai harness
+>>>>>>> bd2263520649b3014b15479fd0a9ddfa4409fb45
