@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>CivicAI James - Chat History</title>
+<!-- Tailwind CSS v3 with forms and container queries -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brandDark: '#070b13',
+            cardDark: '#0e172a',
+            borderDark: '#1b2742',
+            accentBlue: '#2563eb',
+            accentBlueHover: '#1d4ed8'
+          },
+          fontFamily: {
+            sans: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="custom-styling">
+    /* Custom scrollbar and delicate styling overrides */
+    body {
+      background-color: #121214;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .custom-ring {
+      box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08);
+    }
+  </style>
+</head>
+<body class="min-h-screen text-slate-100 flex flex-col items-center justify-start p-0 sm:py-6">
+<!-- Desktop context banner mimicking reference environment -->
+<div class="hidden sm:block text-slate-300 text-sm font-medium mb-4 select-none">
+    CivicAI James - Municipal Intelligence &amp; Document Assistant
+  </div>
+<!-- BEGIN: MobileFrame -->
+<main class="w-full max-w-[420px] bg-[#070b14] sm:rounded-[2rem] sm:border sm:border-slate-800/80 shadow-2xl flex flex-col min-h-screen sm:min-h-[860px] overflow-hidden relative">
+<!-- BEGIN: TopBar -->
+<header class="w-full px-4 pt-4 pb-3 flex items-center justify-between border-b border-slate-800/60 bg-[#070b14]/90 backdrop-blur z-20">
+<!-- Title & Live Status Indicator -->
+<div class="flex items-center space-x-2">
+<span class="w-2.5 h-2.5 rounded-full bg-emerald-400 ring-4 ring-emerald-400/20 inline-block animate-pulse"></span>
+<h1 class="text-white font-bold text-lg tracking-tight">James</h1>
+</div>
+<!-- Action Utilities Pill & Icons -->
+<div class="flex items-center space-x-1 sm:space-x-1.5">
+<!-- Token Metric Badge -->
+<div class="bg-[#111c33] text-slate-300 text-[11px] font-medium px-2 py-1 rounded-md border border-slate-700/50 mr-0.5">
+          8.1k / 8k
+        </div>
+<!-- Moon / Dark Mode Icon -->
+<button aria-label="Toggle Theme" class="p-1.5 text-slate-400 hover:text-slate-200 rounded-md bg-[#0f172a] border border-slate-800" type="button">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+<!-- Volume / Audio Icon -->
+<button aria-label="Toggle Sound" class="p-1.5 text-blue-400 hover:text-blue-300 rounded-md bg-[#0f172a] border border-slate-800" type="button">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M15.536 8.464a5 5 0 010 7.072M17.95 6.05a8 8 0 010 11.9M6 10H4a1 1 0 00-1 1v2a1 1 0 001 1h2l4 4V6l-4 4z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+<!-- Mobile / Device Icon -->
+<button aria-label="Device Toggle" class="p-1.5 text-emerald-400 hover:text-emerald-300 rounded-md bg-[#0f172a] border border-slate-800" type="button">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+<!-- Settings Icon -->
+<button aria-label="Settings" class="p-1.5 text-slate-400 hover:text-slate-200 rounded-md bg-[#0f172a] border border-slate-800" type="button">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+<path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+</header>
+<!-- END: TopBar -->
+<!-- BEGIN: ContentArea -->
+<div class="flex-1 px-3 py-4 space-y-3.5 overflow-y-auto">
+<!-- Section: Chat History Overview & New Chat CTA -->
+<section class="rounded-2xl bg-[#0f1728] border border-slate-800/80 p-4 shadow-sm" data-purpose="chat-history-header">
+<div class="flex items-start justify-between gap-3">
+<div class="space-y-1.5 max-w-[210px]">
+<!-- Title with History Icon -->
+<div class="flex items-center space-x-2">
+<svg class="w-4 h-4 text-sky-400 shrink-0" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<h2 class="text-white font-semibold text-base leading-tight">Chat History</h2>
+</div>
+<!-- Subtitle Description -->
+<p class="text-xs text-slate-400 leading-relaxed">
+              Saved interactions and conversation transcripts (1).
+            </p>
+</div>
+<!-- New Chat Primary Button -->
+<button class="inline-flex items-center space-x-1.5 bg-[#2563eb] hover:bg-blue-600 active:scale-95 text-white font-semibold text-xs px-3.5 py-2.5 rounded-xl shadow transition duration-150 shrink-0" type="button">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<div class="leading-none text-left">
+<div>New</div>
+<div class="text-[11px]">Chat</div>
+</div>
+</button>
+</div>
+</section>
+<!-- Section: Saved Conversation Item Card -->
+<article class="rounded-2xl bg-[#0f1728] border border-slate-800/80 p-4 shadow-sm" data-purpose="chat-history-card">
+<div class="flex items-start justify-between gap-2">
+<!-- Conversation Main Info -->
+<div class="space-y-2 flex-1 min-w-0 pr-1">
+<h3 class="text-white font-bold text-sm tracking-tight truncate" title="Water Tariff Rebate &amp; Property...">
+              Water Tariff Rebate &amp; Propert...
+            </h3>
+<!-- Metadata Row -->
+<div class="flex items-center space-x-2 text-[11px] text-slate-400 font-normal">
+<span>9 Oct,</span>
+<span>01:39</span>
+<span class="text-slate-600">·</span>
+<span>2</span>
+<span>messages</span>
+<span class="text-slate-600">·</span>
+<span>1420</span>
+<span>tok</span>
+</div>
+</div>
+<!-- Action Buttons Group -->
+<div class="flex items-center space-x-1.5 shrink-0 pt-0.5">
+<!-- Resume Button -->
+<button class="px-3 py-1.5 text-xs font-semibold rounded-lg bg-[#19243b] text-slate-200 hover:bg-[#202f4e] border border-slate-700/60 transition duration-150" type="button">
+              Resume
+            </button>
+<!-- Download Button -->
+<button aria-label="Download Transcript" class="p-1.5 text-slate-400 hover:text-slate-200 transition duration-150" type="button">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+<!-- Delete Button -->
+<button aria-label="Delete Transcript" class="p-1.5 text-slate-400 hover:text-red-400 transition duration-150" type="button">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+</div>
+</article>
+<!-- Section: Session Signature Collapsible Item -->
+<section class="rounded-2xl bg-[#0f1728] border border-slate-800/80 px-4 py-3.5 shadow-sm" data-purpose="collapsible-token-card">
+<button class="w-full flex items-center justify-between text-left group" type="button">
+<div class="flex items-center space-x-2.5">
+<!-- Security Lock Icon -->
+<svg class="w-4 h-4 text-sky-400 shrink-0" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span class="text-xs sm:text-sm font-semibold text-slate-200 group-hover:text-white transition">
+              Session Signature &amp; Audit Token
+            </span>
+</div>
+<!-- Dropdown Caret -->
+<svg class="w-4 h-4 text-slate-400 group-hover:text-slate-200 transition shrink-0" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</section>
+</div>
+<!-- END: ContentArea -->
+<!-- BEGIN: BottomNavigation -->
+<nav class="w-full bg-[#080d1a] border-t border-slate-800/70 px-3 py-2 z-20">
+<ul class="grid grid-cols-4 items-center gap-1">
+<!-- Tab: Chat -->
+<li>
+<a class="flex flex-col items-center justify-center py-1.5 px-2 text-slate-400 hover:text-slate-200 group" href="#chat">
+<svg class="w-5 h-5 mb-1 text-slate-400 group-hover:text-slate-200" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span class="text-[11px] font-medium leading-none">Chat</span>
+</a>
+</li>
+<!-- Tab: Scanner -->
+<li>
+<a class="flex flex-col items-center justify-center py-1.5 px-2 text-slate-400 hover:text-slate-200 group" href="#scanner">
+<svg class="w-5 h-5 mb-1 text-slate-400 group-hover:text-slate-200" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+<path d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span class="text-[11px] font-medium leading-none">Scanner</span>
+</a>
+</li>
+<!-- Tab: Policies -->
+<li>
+<a class="flex flex-col items-center justify-center py-1.5 px-2 text-slate-400 hover:text-slate-200 group" href="#policies">
+<svg class="w-5 h-5 mb-1 text-slate-400 group-hover:text-slate-200" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span class="text-[11px] font-medium leading-none">Policies</span>
+</a>
+</li>
+<!-- Tab: History (Active state pill) -->
+<li>
+<a class="flex flex-col items-center justify-center py-1.5 px-2 rounded-xl bg-[#142342] text-sky-400 border border-sky-500/30" href="#history">
+<svg class="w-5 h-5 mb-1 text-sky-400" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span class="text-[11px] font-semibold leading-none text-sky-300">History</span>
+</a>
+</li>
+</ul>
+</nav>
+<!-- END: BottomNavigation -->
+</main>
+<!-- END: MobileFrame -->
+</body></html>

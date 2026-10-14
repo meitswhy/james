@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>CivicAI James - Policy FAQ Directory</title>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              dark: '#080d19',
+              card: '#0f172a',
+              cardBorder: '#1e293b',
+              accent: '#2563eb',
+              accentHover: '#1d4ed8',
+              emerald: '#10b981',
+              muted: '#94a3b8'
+            }
+          },
+          fontFamily: {
+            sans: ['-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', 'Helvetica', 'Arial', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+<!-- Custom Styles for Scrollbars & Layout Refinements -->
+<style data-purpose="custom-scrollbars">
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="bg-[#050811] text-slate-100 min-h-screen flex items-center justify-center font-sans antialiased p-0 sm:p-4">
+<!-- BEGIN: MobileDeviceFrame -->
+<main class="w-full max-w-[420px] h-[100dvh] sm:h-[880px] bg-[#080d18] flex flex-col justify-between sm:rounded-[36px] border border-slate-800/80 shadow-2xl overflow-hidden relative" data-purpose="mobile-container">
+<!-- BEGIN: TopHeader -->
+<header class="px-5 pt-4 pb-3 flex items-center justify-between border-b border-slate-800/40 shrink-0 bg-[#080d18]/90 backdrop-blur-md sticky top-0 z-20">
+<!-- Left: Logo & Online Indicator -->
+<div class="flex items-center space-x-2">
+<span class="w-2.5 h-2.5 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.8)] inline-block"></span>
+<span class="font-bold text-lg text-white tracking-wide">James</span>
+</div>
+<!-- Right: Token Badge & Action Buttons -->
+<div class="flex items-center space-x-2 text-xs">
+<!-- Token Metric Pill -->
+<div class="px-2.5 py-1 bg-[#131d33] border border-slate-700/60 rounded-full text-slate-300 font-medium tracking-tight">
+          8.1k <span class="text-slate-500">/</span> 8k
+        </div>
+<!-- Night Mode / Dark Icon Button -->
+<button aria-label="Toggle theme" class="p-1.5 bg-[#131d33] text-slate-300 hover:text-white rounded-lg border border-slate-700/40" type="button">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+<!-- Speaker / Audio Mode Button -->
+<button aria-label="Audio mode" class="p-1.5 bg-[#1b3a6b]/70 text-blue-400 rounded-lg border border-blue-500/30" type="button">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+<!-- Device / Mobile View Button -->
+<button aria-label="Mobile switch" class="p-1.5 bg-[#131d33] text-emerald-400 rounded-lg border border-slate-700/40" type="button">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<rect height="20" rx="2" stroke-linecap="round" stroke-linejoin="round" width="14" x="5" y="2"></rect>
+<path d="M12 18h.01" stroke-linecap="round"></path>
+</svg>
+</button>
+<!-- Settings Cog Button -->
+<button aria-label="Settings" class="p-1.5 bg-[#131d33] text-slate-300 hover:text-white rounded-lg border border-slate-700/40" type="button">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" stroke-linecap="round" stroke-linejoin="round"></path>
+<circle cx="12" cy="12" r="3"></circle>
+</svg>
+</button>
+</div>
+</header>
+<!-- END: TopHeader -->
+<!-- BEGIN: ScrollableContent -->
+<div class="flex-1 overflow-y-auto px-4 py-4 space-y-4 no-scrollbar">
+<!-- BEGIN: DirectoryIntroBanner -->
+<section class="bg-[#0f172a]/95 border border-slate-800 rounded-2xl p-4 shadow-sm" data-purpose="directory-banner">
+<div class="flex items-start justify-between">
+<div class="flex items-center space-x-2">
+<svg class="w-5 h-5 text-blue-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<h1 class="text-base font-semibold text-white tracking-tight">Policy FAQ Directory</h1>
+</div>
+<!-- Expand/Add Action Icon -->
+<button aria-label="Expand directory details" class="text-slate-400 hover:text-slate-200" type="button">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="9"></circle>
+<path d="M12 8v8m-4-4h8" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+</div>
+<p class="mt-1 text-xs text-slate-400 font-normal leading-relaxed">
+          Verified municipal regulations with exact page citations.
+        </p>
+<!-- Search Bar Input -->
+<div class="mt-3 relative" data-purpose="search-box">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<input class="w-full pl-9 pr-3 py-2 bg-[#080d19] border border-slate-700/80 rounded-xl text-xs text-slate-200 placeholder-slate-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors" placeholder="Search water bills, property tax, building perm" type="text"/>
+</div>
+<!-- Filter Chips Bar -->
+<div class="mt-3 flex items-center space-x-2 overflow-x-auto no-scrollbar pt-0.5 pb-1" data-purpose="filter-pills">
+<button class="px-3.5 py-1.5 bg-blue-600 text-white rounded-full text-xs font-medium shrink-0 shadow-sm shadow-blue-900/30">
+            All
+          </button>
+<button class="px-3 py-1.5 bg-[#0b1220] hover:bg-slate-800 border border-slate-700/70 text-slate-300 rounded-full text-xs shrink-0 transition-colors">
+            Property Tax
+          </button>
+<button class="px-3 py-1.5 bg-[#0b1220] hover:bg-slate-800 border border-slate-700/70 text-slate-300 rounded-full text-xs shrink-0 transition-colors">
+            Water &amp; Utilities
+          </button>
+<button class="px-3 py-1.5 bg-[#0b1220] hover:bg-slate-800 border border-slate-700/70 text-slate-300 rounded-full text-xs shrink-0 transition-colors">
+            Building &amp; Perm...
+          </button>
+</div>
+</section>
+<!-- END: DirectoryIntroBanner -->
+<!-- BEGIN: AccordionPolicyCard -->
+<article class="bg-[#0f172a]/95 border border-slate-800 rounded-2xl p-4 shadow-sm space-y-3" data-purpose="faq-accordion-item">
+<!-- Accordion Header -->
+<div class="flex items-start justify-between cursor-pointer">
+<h2 class="text-[13px] font-bold text-white leading-snug pr-3">
+            What is the deadline and rebate structure for early property tax payment?
+          </h2>
+<button aria-label="Collapse section" class="text-slate-400 mt-0.5 shrink-0" type="button">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24">
+<path d="M5 15l7-7 7 7" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+</div>
+<!-- Category & Citation Document Subtitle -->
+<div class="flex items-center space-x-2 text-[11px]">
+<span class="text-blue-400 font-semibold tracking-wide">Property Tax</span>
+<span class="text-slate-500">•</span>
+<span class="text-slate-400 truncate">Municipal Citizen Charter &amp; Regulations 2026 (p.12)</span>
+</div>
+<!-- Main Answer Body -->
+<p class="text-[12px] text-slate-300 leading-relaxed font-normal">
+          Property owners who pay their full annual property tax assessment on or before April 30 are entitled to an early-bird rebate of 10% on the general tax component. Payments made between May 1 and May 31 receive a reduced rebate of 5%.
+        </p>
+<!-- Verbatim Excerpt Callout Box -->
+<div class="bg-[#0a1827] border border-blue-900/60 rounded-xl p-3 space-y-1.5" data-purpose="verbatim-callout">
+<div class="flex items-center space-x-1.5 text-emerald-400 font-bold text-[10px] tracking-wider uppercase">
+<svg class="w-3.5 h-3.5 text-emerald-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24">
+<path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>VERBATIM OFFICIAL EXCERPT (CLAUSE)</span>
+</div>
+<p class="text-[11.5px] italic text-slate-300 leading-relaxed pl-0.5">
+            “An early-bird rebate of 10% on general property tax shall be granted to property owners paying the entire annual dues by April 30, reducing to 5% through May 31.”
+          </p>
+</div>
+<!-- Card Action Buttons -->
+<div class="pt-2 flex items-center justify-between border-t border-slate-800/80">
+<button class="text-xs text-slate-400 hover:text-slate-200 flex items-center space-x-1 font-normal transition-colors" type="button">
+<span>Inspect Citation (p.12)</span>
+</button>
+<button class="px-3.5 py-1.5 bg-blue-600 hover:bg-blue-500 active:bg-blue-700 text-white font-medium text-xs rounded-xl flex items-center space-x-1.5 shadow-md shadow-blue-900/40 transition-colors" type="button">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Ask in Chat</span>
+</button>
+</div>
+</article>
+<!-- END: AccordionPolicyCard -->
+</div>
+<!-- END: ScrollableContent -->
+<!-- BEGIN: BottomNavigation -->
+<nav class="bg-[#080d19]/95 border-t border-slate-800/80 px-3 py-2 flex items-center justify-around shrink-0 z-20 backdrop-blur-md" data-purpose="mobile-navbar">
+<!-- Tab 1: Chat -->
+<button class="flex flex-col items-center justify-center py-1 px-3 text-slate-400 hover:text-slate-200 transition-colors" type="button">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M8 10h.01M12 10h.01M16 10h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="text-[10px] mt-1 font-medium">Chat</span>
+</button>
+<!-- Tab 2: Scanner -->
+<button class="flex flex-col items-center justify-center py-1 px-3 text-slate-400 hover:text-slate-200 transition-colors" type="button">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="text-[10px] mt-1 font-medium">Scanner</span>
+</button>
+<!-- Tab 3: Policies (Active) -->
+<button class="flex flex-col items-center justify-center py-1 px-4 bg-[#14233c] text-blue-400 rounded-2xl border border-blue-500/20 transition-colors" type="button">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="text-[10px] mt-0.5 font-semibold">Policies</span>
+</button>
+<!-- Tab 4: History -->
+<button class="flex flex-col items-center justify-center py-1 px-3 text-slate-400 hover:text-slate-200 transition-colors" type="button">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="text-[10px] mt-1 font-medium">History</span>
+</button>
+</nav>
+<!-- END: BottomNavigation -->
+</main>
+<!-- END: MobileDeviceFrame -->
+</body></html>
